@@ -968,6 +968,11 @@
 			var self = this;
 			self.isFocused = false;
 			if (self.ignoreFocus) return;
+
+			if (document.activeElement === self.$dropdown_content[0]) {
+		    	self.$control_input.focus();
+		    	return;
+		    }
 	
 			if (self.settings.create && self.settings.createOnBlur) {
 				self.createItem();
